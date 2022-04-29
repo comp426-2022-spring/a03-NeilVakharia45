@@ -11,7 +11,7 @@ const port = args.port || process.env.PORT || 5000
 
 // Start the server
 const server = app.listen(port, () => {
-    console.log("App listening on port %PORT%".replace("%PORT%", port))
+    console.log('App listening on port %PORT%'.replace("%PORT%", port))
 });
 
 // Functions
@@ -74,7 +74,7 @@ app.get('/app/flip', (req, res) => {
     res.send({flip: coinFlip()})
 });
 
-app.get('/app/flips/:number', (req, res) =>{
+app.get('/app/flips/:number', (req, res) => {
     res.send(coinFlips(req.params.number))
 });
 
