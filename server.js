@@ -12,7 +12,7 @@ const server = app.listen(port, () => {
 });
 
 // Functions
-function coinFlip() {
+  function coinFlip() {
     var result=Math.random();
     if(result<.5){
       return "tails";
@@ -28,9 +28,8 @@ function coinFlip() {
     for(var i=0; i<flips; i++){
       flipArray.push(coinFlip());
     }
-    var summary=countFlips(flipResults);
 
-    return {raw: flipArray, summary: summary};
+    return flipArray;
   }
   
   function countFlips(array) {
@@ -79,11 +78,11 @@ app.get('/app/flips/:number', (req,res) => {
 });
 
 app.get('/app/flip/call/heads', (req,res) => {
-  res.status(200).json(flipACoin("heads"))
+  res.status(200).json(flipACoin('heads'))
 });
 
 app.get('/app/flip/call/tails', (req,res) => {
-  res.status(200).json(flipACoin("tails"))
+  res.status(200).json(flipACoin('tails'))
 });
 
 // Default response for any other request
