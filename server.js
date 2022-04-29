@@ -49,7 +49,7 @@ const server = app.listen(port, () => {
   function flipACoin(call) {
     var result;
     var flip=coinFlip();
-    if(call.equals(flip)){
+    if(call == flip){
       result="win";
     }
     else{
@@ -74,7 +74,8 @@ app.get('/app/flip', (req,res) => {
 });
 
 app.get('/app/flips/:number', (req,res) => {
-  res.send(coinFlips(req.params.number))
+  var flips=coinFlips(req.params.number)
+  res.send({raw: flips, summary:countFlips(flips)})
 });
 
 app.get('/app/flip/call/heads', (req,res) => {
