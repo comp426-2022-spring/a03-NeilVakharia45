@@ -24,10 +24,13 @@ function coinFlip() {
   
   function coinFlips(flips) {
     var flipArray=[];
+  
     for(var i=0; i<flips; i++){
       flipArray.push(coinFlip());
     }
-    return flipArray;
+    var summary=countFlips(flipResults);
+
+    return {raw: flipArray, summary: summary};
   }
   
   function countFlips(array) {
