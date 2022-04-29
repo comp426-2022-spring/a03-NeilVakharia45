@@ -1,4 +1,4 @@
-// Require express
+// Set up the server
 const express = require('express')
 const app = express()
 const args = require('minimist')(process.argv.slice(2))
@@ -6,12 +6,9 @@ args['port']
 const call = args.call
 const port = args.port || process.env.PORT || 5000
 
-// Import functions from module
-//import{coinFlip, coinFlips, countFlips, flipACoin} from "C:\\Users\\Neil\\OneDrive\\UNC\\COMP426\\a03-NeilVakharia45\\coin.mjs";
-
-// Start the server
+// Start an app server
 const server = app.listen(port, () => {
-    console.log('App listening on port %PORT%'.replace("%PORT%", port))
+    console.log('App listening on port %PORT%'.replace('%PORT%', port))
 });
 
 // Functions
